@@ -96,10 +96,10 @@ a {
   display: none;
 }
 .search__input {
-  padding: 12px 24px;
+  padding: 12px 15px;
   background-color: transparent;
   transition: transform 250ms ease-in-out;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;        
   color: #000;
   background-color: #EEF2F3;
@@ -108,9 +108,9 @@ a {
   background-size: 18px 18px;
   background-position: 95% center;
   border: 0 none;
-  width: 500px;
+  width: 450px;
+  border-radius: 5px;
 }
-
 .search__input::placeholder {
             color: 000;
         }
@@ -437,6 +437,7 @@ a {
   background-color: #ffffff;
   cursor: pointer;
   padding: 18px 0;
+  font-weight: bold;
 }
 
 .dd-button:after {
@@ -1132,7 +1133,7 @@ section h2{
 }
 
 #filter-categories .filters label {
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 1rem;
   margin-bottom: 0.25rem;
   border-radius: 3px;
   min-width: 50px;
@@ -1495,8 +1496,6 @@ padding-right: 15px;
   margin: 0 auto;
   position: relative;
 }
-
-
 /*login/signin Modal*/
 .modal {
   opacity: 0;
@@ -1509,7 +1508,8 @@ padding-right: 15px;
   text-align: left;
   background: rgba(0,0,0, .9);
   transition: opacity .25s ease;
-}
+  z-index: 10;
+ }
 
 .modal__bg {
   position: absolute;
@@ -1611,20 +1611,20 @@ padding-right: 15px;
 		max-width: 31%;
 	}
 }
-@media only screen and (max-width:768px){
+@media only screen and (max-width:767px){
 	.post {
 		flex: 1 1 32%;
 		max-width: 50%;
 	}
-	  .dd-button {
-    background-color:transparent;
-  }
+	.header {
+		background: #f3f3f3;
+		box-shadow: 1px 1px 6px 0 rgba(0,0,0,.2);
+	}
+	.dd-button, .dd-menu{
+		background: #f3f3f3;
+	}
   .right-menu{
     display: none;
-  }
-  .header{
-    background: #f3f3f3;
-    box-shadow: 1px 1px 6px 0 rgba(0,0,0,.2);
   }
   .post figcaption {
 	padding: 10px;
@@ -1649,28 +1649,8 @@ padding-right: 15px;
 
 }
 @media only screen and (max-width:479px){
-	.post {
-		flex: 1 1 100%;
-		max-width: 100%;
-	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* media queries */
 @media screen and (max-width: 1500px) {
    .container{
     width: 100%;
@@ -1684,11 +1664,11 @@ padding-right: 15px;
     width: 32%;
   }
   .header a.premium{
-    padding: 12px 34px;
+    padding: 8px 25px;
     font-size: 11px;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .container{width: 100%; margin: 0 auto;}
   .search__input{
     width: 370px;
@@ -1727,7 +1707,7 @@ padding-right: 15px;
     margin-left: 0.5rem;
   }
   .search__input {
-    width: 100%;
+    width: 37vw;
     text-overflow: ellipsis;
     font-size: 11px;
   }
@@ -1773,6 +1753,26 @@ padding-right: 15px;
   .footer .flex-cols{   
     justify-content: left;
   }
+}
+@media only screen and (min-width:768px) and (max-width:991px){
+	.header ul.menu li a label, .header a.premium{
+		font-size: 10px;
+	}
+	.dd-button{
+		font-size: 13px;
+	}
+	.select-box{
+		width:65px;
+	}
+	.header ul.menu li a label {
+		padding: 7px;
+	}
+	.search__input{
+		padding:12px;
+	}
+	.header .logo {
+		width: 85px;
+	}
 }
 /*exclusivly for responsive header*/
 @media (min-width: 768px) {
@@ -1914,6 +1914,10 @@ padding-right: 15px;
     font-size: 14px;
     line-height: 30px;
   }
+	.post {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
   .container {
     padding: 0 35px;
   }
